@@ -1,0 +1,8 @@
+# debug
+ipython==7.24.1
+django-debug-toolbar==3.2.1
+
+# test
+coverage==4.5.4
+fourmat==0.7.1
+factory-boy==3.2.0

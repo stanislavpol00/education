@@ -1,0 +1,37 @@
+from django.utils.translation import gettext_lazy as _
+
+
+class Environment:
+    SPACE_OPPORTUNITIES = "SPACE_OPPORTUNITIES"
+    ACTIVITY_OPPORTUNITIES = "ACTIVITY_OPPORTUNITIES"
+    COMMUNITY_ADULT_OPPORTUNITIES = "COMMUNITY_ADULT_OPPORTUNITIES"
+    PEER_OPPORTUNITIES = "PEER_OPPORTUNITIES"
+    SPACE_EXPECTATIONS = "SPACE_EXPECTATIONS"
+    ACTIVITY_EXPECTATIONS = "ACTIVITY_EXPECTATIONS"
+    COMMUNITY_ADULT_EXPECTATIONS = "COMMUNITY_ADULT_EXPECTATIONS"
+    PEER_EXPECTATIONS = "PEER_EXPECTATIONS"
+    OTHER = "OTHER"
+
+    CHOICES = [
+        (SPACE_OPPORTUNITIES, _("Space Opportunities")),
+        (ACTIVITY_OPPORTUNITIES, _("Activity Opportunities")),
+        (COMMUNITY_ADULT_OPPORTUNITIES, _("Community Adult Opportunities")),
+        (PEER_OPPORTUNITIES, _("Peer Opportunities")),
+        (SPACE_EXPECTATIONS, _("Space Expectations")),
+        (ACTIVITY_EXPECTATIONS, _("Activity Expectations")),
+        (COMMUNITY_ADULT_EXPECTATIONS, _("Community Adult Expectations")),
+        (PEER_EXPECTATIONS, _("Peer  Expectations (Normed behavior)")),
+        (OTHER, _("Other")),
+    ]
+
+    VALUES = [
+        SPACE_OPPORTUNITIES,
+        ACTIVITY_OPPORTUNITIES,
+        COMMUNITY_ADULT_OPPORTUNITIES,
+        PEER_OPPORTUNITIES,
+        SPACE_EXPECTATIONS,
+        ACTIVITY_EXPECTATIONS,
+        COMMUNITY_ADULT_EXPECTATIONS,
+        PEER_EXPECTATIONS,
+        OTHER,
+    ]

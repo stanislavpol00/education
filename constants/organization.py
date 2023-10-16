@@ -1,0 +1,2 @@
+class Organization:
+    DEFAULT_ORGANIZATION = "ADMINISTRATOR"

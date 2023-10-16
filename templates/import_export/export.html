@@ -1,0 +1,56 @@
+{% extends 'admin/import_export/export.html' %}
+{% load i18n %}
+
+{% block content %}
+<form action="" method="POST">
+  {% csrf_token %}
+
+    <fieldset class="module aligned">
+      {% for field in form %}
+        <div class="form-row">
+          {{ field.errors }}
+
+          {{ field.label_tag }}
+
+          {{ field }}
+
+          {% if field.field.help_text %}
+          <p class="help">{{ field.field.help_text|safe }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+
+      {% if filterset %}
+        {% for field in filterset.form %}
+          <div class="form-row">
+            {{ field.errors }}
+
+            {{ field.label_tag }}
+
+            {{ field }}
+
+            {% if field.field.help_text %}
+            <p class="help">{{ field.field.help_text|safe }}</p>
+            {% endif %}
+          </div>
+        {% endfor %}
+      {% endif %}
+
+      {% if allow_select_fields %}
+      <div class="form-row">
+        <label for="id_selected_fields">{% trans "Fields" %}:</label>
+        <select class="select2 w-400" name="selected_fields" id="id_selected_fields" multiple="multiple">
+            {% for field_name in allow_select_fields %}
+                <option value="{{ field_name }}">{{ field_name }}</option>
+            {% endfor %}
+        </select>
+      </div>
+      {% endif %}
+    </fieldset>
+
+    <div class="submit-row">
+      <input type="submit" class="default" value="{% trans "Submit" %}">
+    </div>
+</form>
+
+{% endblock %}
